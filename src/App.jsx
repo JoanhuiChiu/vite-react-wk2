@@ -1,33 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// import { useState } from 'react'
+import { Routes, Route, NavLink } from "react-router-dom"
+import Wk1 from "./App_wk1"
+import Wk2 from './App_wk2'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const style = ({ isActive }) => {
+    return {
+      color: isActive ? 'blue' : ''
+    }
+  }
 
   return (
     <>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <NavLink to="/" style={style}>第一週作業</NavLink> |
+        <NavLink to="/Wk2" style={style}>第二週作業</NavLink> 
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <hr />
+      <Routes>
+        <Route path="/" element={<Wk1 />}></Route>
+        <Route path="/Wk2" element={<Wk2 />}></Route>
+      </Routes>
     </>
   )
 }
