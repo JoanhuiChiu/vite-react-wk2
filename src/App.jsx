@@ -14,13 +14,13 @@ function App() {
   return (
     <>
       <div>
-        <NavLink to="/" style={style}>第一週作業</NavLink> |
-        <NavLink to="/Wk2" style={style}>第二週作業</NavLink> 
+        <NavLink to="/Wk1" style={style}>第一週作業</NavLink> |
+        <NavLink to="/" style={style}>第二週作業</NavLink> 
       </div>
       <hr />
       <Routes>
-        <Route path="/" element={<Wk1 />}></Route>
-        <Route path="/Wk2" element={<Wk2 />}></Route>
+        <Route path="/Wk1" element={<Wk1 />}></Route>
+        <Route path="/" element={<Wk2 />}></Route>
       </Routes>
     </>
   )
